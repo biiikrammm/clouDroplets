@@ -1,54 +1,47 @@
-import { useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { Toaster } from "sonner";
+import useLenis from "@/hooks/useLenis";
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import { Marquee } from "@/components/site/Marquee";
+import { Manifesto } from "@/components/site/Manifesto";
+import { Services } from "@/components/site/Services";
+import { SolutionTracks } from "@/components/site/SolutionTracks";
+import { Stats } from "@/components/site/Stats";
+import { TechPartners } from "@/components/site/TechPartners";
+import { Offices } from "@/components/site/Offices";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
 
 function App() {
+  useLenis();
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <div className="App grain bg-cream text-ink antialiased">
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "#121212",
+            color: "#FDF8F5",
+            border: "1px solid rgba(47,173,160,0.4)",
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "12px",
+          },
+        }}
+      />
+      <Header />
+      <main>
+        <Hero />
+        <Marquee />
+        <Manifesto />
+        <Services />
+        <SolutionTracks />
+        <Stats />
+        <TechPartners />
+        <Offices />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
