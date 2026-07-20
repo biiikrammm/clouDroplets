@@ -31,14 +31,14 @@ export const WhatsAppButton = () => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6 }}
           transition={{ type: "spring", stiffness: 260, damping: 18 }}
-          className="fixed bottom-6 right-6 z-[120] flex items-center gap-3 group"
+          className="fixed bottom-6 left-6 z-[120] flex flex-row-reverse items-center gap-3 group"
         >
           <AnimatePresence>
             {tip && (
               <motion.span
-                initial={{ opacity: 0, x: 8 }}
+                initial={{ opacity: 0, x: -8 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 8 }}
+                exit={{ opacity: 0, x: -8 }}
                 className="hidden sm:block rounded-full bg-ink text-cream px-4 py-2 font-mono text-[11px] tracking-[0.15em] uppercase whitespace-nowrap"
               >
                 Chat on WhatsApp

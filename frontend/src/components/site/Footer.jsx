@@ -11,6 +11,7 @@ const COLUMNS = [
       { label: "Solutions", href: "#solutions" },
       { label: "Partners", href: "#partners" },
       { label: "Offices", href: "#offices" },
+      { label: "Terms & Conditions", to: "/terms" },
     ],
   },
   {
@@ -76,9 +77,19 @@ export const Footer = () => (
             <ul className="space-y-3">
               {col.links.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="link-underline text-ink/70 hover:text-ink transition-colors duration-300 text-[15px]">
-                    {l.label}
-                  </a>
+                  {l.to ? (
+                    <Link
+                      to={l.to}
+                      data-testid="footer-nav-terms"
+                      className="link-underline inline-flex items-center gap-1.5 font-medium text-copper hover:text-copper-dark transition-colors duration-300 text-[15px]"
+                    >
+                      {l.label} <ArrowUpRight size={14} />
+                    </Link>
+                  ) : (
+                    <a href={l.href} className="link-underline text-ink/70 hover:text-ink transition-colors duration-300 text-[15px]">
+                      {l.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
