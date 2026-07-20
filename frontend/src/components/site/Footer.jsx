@@ -1,5 +1,5 @@
 import { ArrowUpRight, Linkedin, Twitter, Instagram, Facebook, ArrowUp } from "lucide-react";
-import { Reveal, MaskLineScroll, Magnetic } from "./motion";
+import { MaskLineScroll, Magnetic } from "./motion";
 
 const COLUMNS = [
   {
@@ -123,17 +123,6 @@ export const Footer = () => (
         </div>
       </div>
     </div>
-
-    {/* Giant kinetic wordmark */}
-    <Reveal className="relative">
-      <div
-        aria-hidden="true"
-        className="select-none font-serif italic leading-none text-center text-ink/90 whitespace-nowrap"
-        style={{ fontSize: "clamp(3.5rem, 15vw, 15rem)" }}
-      >
-        clou<span className="text-teal">D</span>roplets
-      </div>
-    </Reveal>
 
     {/* Bottom bar */}
     <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
