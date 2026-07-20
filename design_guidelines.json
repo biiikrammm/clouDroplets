@@ -1,0 +1,151 @@
+{
+  "project_name": "clouDroplets.IO",
+  "theme": "light",
+  "aesthetic": "Editorial-Tech Hybrid",
+  "typography": {
+    "font_families": {
+      "heading": "'Cormorant Garamond', serif",
+      "body": "'Manrope', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "pairing_strategy": "Awwwards-level unexpected editorial pairing. Elegant, high-contrast serif (Cormorant Garamond) for massive kinetic hero typography and manifesto titles to build luxury/trust. Clean, geometric sans (Manrope) for readability in body text. Technical monospace (JetBrains Mono) for numbers, track labels, and stats to inject the 'cyber/cloud' identity.",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-7xl lg:text-8xl font-light tracking-tighter leading-none",
+      "h2": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-tight",
+      "h3": "text-2xl sm:text-3xl font-medium tracking-tight",
+      "body": "text-base sm:text-lg leading-relaxed font-light",
+      "mono_labels": "text-xs sm:text-sm font-mono tracking-[0.2em] uppercase"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#FDF8F5",
+      "secondary": "#F4EFEA",
+      "tertiary": "#EBE4DE"
+    },
+    "text": {
+      "primary": "#121212",
+      "secondary": "#4A4A4A",
+      "muted": "#7A7A7A"
+    },
+    "brand": {
+      "teal": "#2FADA0",
+      "copper": "#B5623C"
+    },
+    "strategy": "Warm cream/off-white backgrounds to signal trust, approachability, and editorial prestige (breaking away from generic dark-mode hacker tropes). Text is deep charcoal, never pure black. Use Teal and Copper strictly for interactions, hover states, data-points, and subtle UI accents like 1px borders or typographic highlights."
+  },
+  "visual_enhancers": {
+    "surface_styles": {
+      "cards": "Flat solid background (#F4EFEA), sharp edges (rounded-none or max rounded-sm), with a delicate 1px border (border-copper/20). Avoid heavy drop shadows; use subtle inner borders or 1px outer strokes.",
+      "glass": "High-end optical clarity. backdrop-blur-xl bg-white/40 with border-white/60. Used for sticky header."
+    },
+    "image_treatments": "Images must look deliberate. Use 'clipped frames' (sharp rectangles, sometimes with slight aspect ratio clipping or overlapping grids). Apply a subtle sepia or warm filter via CSS, or a mix-blend-mode (multiply) against the cream background to integrate them editorially. Add 'spotlight' gradients (radial-gradient) behind images."
+  },
+  "layouts": {
+    "general": "Asymmetrical, editorial grids. Heavy use of negative space. Avoid standard Bootstrap columns.",
+    "spacing_scale": "Extremely generous. Sections should have py-24 md:py-32. Elements within grids should use gap-8 to gap-16.",
+    "sections": [
+      {
+        "name": "Kinetic Hero",
+        "description": "Massive typography with masked line-by-line reveal on load. A subtle 3D/parallax abstract element (wireframe or floating disk) interacting with the scroll.",
+        "components": ["Framer Motion (y: 100% to 0 with overflow-hidden wrapper)", "Lenis scroll", "React Spring Parallax or framer-motion useScroll"]
+      },
+      {
+        "name": "Numbered Manifesto",
+        "description": "Vision, Mission, Values. Presented as 'Dossiers'. Huge JetBrains Mono numbers (01, 02) on the left, sticking via position: sticky, while the Cormorant Garamond content scrolls past on the right.",
+        "components": ["CSS Position Sticky", "Grid layout (cols-12, left span-4, right span-8)"]
+      },
+      {
+        "name": "Services Deep Dive",
+        "description": "Cloud Computing, Cyber Security, InfoSec. Presented as an elegant accordion or a staggered bento grid where hovering expands the image/text.",
+        "components": ["Shadcn Accordion (highly customized) or Framer Motion expanding cards"]
+      },
+      {
+        "name": "Solution Tracks",
+        "description": "Cloud Security Architect, Tools Implementation, NOC & SOC. A dense, technical grid with monospaced metadata and 1px borders, contrasting with the editorial typography.",
+        "components": ["Grid border collapse technique (border-r border-b)"]
+      },
+      {
+        "name": "Technology Partners",
+        "description": "AWS, Azure, CrowdStrike, etc. A slow, seamless editorial marquee.",
+        "components": ["react-fast-marquee", "Grayscale logos with opacity-50, transitioning to full color opacity-100 on hover"]
+      },
+      {
+        "name": "Stats Counters",
+        "description": "Projects Complete, Happy Clients, etc. Large numbers counting up when in view.",
+        "components": ["Framer Motion useInView", "Custom counter hook"]
+      },
+      {
+        "name": "Offices",
+        "description": "Noida + Bangalore. Editorial photography with precise coordinates and timezones in monospace.",
+        "components": ["Hover image reveal or stacked polaroid style"]
+      },
+      {
+        "name": "Contact Form",
+        "description": "Premium interaction. Minimalist inputs (border-bottom only, no background). Floating labels. A magnetic or animated submit button.",
+        "components": ["Shadcn Form/Input (customized to flush borders)"]
+      }
+    ]
+  },
+  "motion": {
+    "scrolling": "Lenis must be implemented for momentum scrolling to give a premium feel.",
+    "reveals": "Every section must have a scroll-triggered reveal. Staggered text (line by line) for headings. Fade up with slight y-translate for body text.",
+    "micro_interactions": "Magnetic buttons for primary CTAs. Links should have an underline that animates out from the center or left on hover.",
+    "hero_animation": "Masked text reveal. The text should be wrapped in an overflow-hidden span, and the inner text animates from y: 100% to 0 over 1.2s with a custom cubic-bezier(0.76, 0, 0.24, 1)."
+  },
+  "3d_libraries": {
+    "recommendation": "Use framer-motion's useScroll for 2.5D parallax effects, or a lightweight TSParticles / custom canvas for the subtle background hero moment. No heavy R3F needed unless specifically building a 3D cloud network, in which case keep it abstract and light."
+  },
+  "image_urls": [
+    {
+      "category": "Hero / Abstract Cloud",
+      "url": "https://images.unsplash.com/photo-1663018165037-ebe0576b786a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGNsb3VkJTIwbmV0d29yayUyMG1pbmltYWwlMjBsaWdodCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzg0NTYwMjEyfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract network diagram/cloud structure for parallax hero layer"
+    },
+    {
+      "category": "Offices / Noida & Bangalore",
+      "url": "https://images.pexels.com/photos/10752001/pexels-photo-10752001.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Modern interior with sunlight streaming through geometric patterns. Use for Bangalore office."
+    },
+    {
+      "category": "Offices / Noida & Bangalore",
+      "url": "https://images.pexels.com/photos/17460303/pexels-photo-17460303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Spacious office interior with urban cityscape. Use for Noida office."
+    },
+    {
+      "category": "Cyber Security / Abstract Tech",
+      "url": "https://images.pexels.com/photos/17489163/pexels-photo-17489163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Close-up of modern server unit. Apply a mix-blend-mode: multiply or sepia tone to match the editorial light theme."
+    },
+    {
+      "category": "Cyber Security / Abstract Tech",
+      "url": "https://images.pexels.com/photos/38482455/pexels-photo-38482455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Cyber security concept on grunge-style background. Great for Manifesto or Solutions."
+    }
+  ],
+  "instructions_to_main_agent": [
+    "1. Do not use generic fonts (Inter, Roboto). Strictly use Cormorant Garamond, Manrope, and JetBrains Mono. Import them via Google Fonts.",
+    "2. Implement Lenis for smooth scrolling at the root level.",
+    "3. Build the kinetic hero text reveal meticulously. Wrap lines of text in <span className='overflow-hidden block'> and animate the inner <span> from translateY(100%).",
+    "4. Apply the color palette literally. Background must be the warm cream #FDF8F5. Use Teal (#2FADA0) and Copper (#B5623C) only for accents/hover/lines.",
+    "5. For images, apply 'editorial' treatments. Never just drop a rounded image. Use sharp corners, 1px borders, or mix-blend-mode filters to integrate them into the cream background.",
+    "6. Build a custom slow marquee using react-fast-marquee or CSS animations for the tech partners.",
+    "7. Ensure the entire page feels like a single, cohesive, award-winning editorial piece, not a segmented template.",
+    "8. Add 'data-testid' to all interactive elements."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters where appropriate.",
+    "You MUST NOT apply universal transition (transition: all). Always add transitions for specific properties.",
+    "You MUST NOT center align the app container. No .App { text-align: center; }.",
+    "Always use modern button styles (pill-shaped or sharp) with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters (like 🤖🧠💭💡🔮🎯) for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "Main agent relies on provided image URLs. NEVER use placeholder text/domains.",
+    "All interactive and key informational elements MUST include a 'data-testid' attribute."
+  ]
+}
