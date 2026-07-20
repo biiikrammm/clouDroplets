@@ -12,6 +12,7 @@ import { TechPartners } from "@/components/site/TechPartners";
 import { Offices } from "@/components/site/Offices";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 function App() {
   useLenis();
@@ -42,6 +43,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
