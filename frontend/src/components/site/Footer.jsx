@@ -1,4 +1,5 @@
-import { ArrowUpRight, Linkedin, Twitter, Instagram, Facebook, ArrowUp } from "lucide-react";
+import { ArrowUpRight, ArrowUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import { MaskLineScroll, Magnetic } from "./motion";
 
 const COLUMNS = [
@@ -28,12 +29,6 @@ const OFFICES = [
   { city: "Bangalore", meta: "12.96°N — South", line: "Richmond Rd, Langford Gardens, Bengaluru 560025" },
 ];
 
-const SOCIALS = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-];
 
 export const Footer = () => (
   <footer data-testid="site-footer" className="relative bg-cream overflow-hidden border-t border-copper/20">
@@ -73,19 +68,6 @@ export const Footer = () => (
             Modern Cloud &amp; Security solutions. We protect data integrity, optimize cloud
             infrastructure, and drive compliance &amp; migration.
           </p>
-          <div className="mt-8 flex items-center gap-3">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                aria-label={s.label}
-                data-testid={`footer-social-${s.label.toLowerCase()}`}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-copper/25 text-ink/60 hover:bg-ink hover:text-cream hover:border-ink transition-colors duration-300"
-              >
-                <s.icon size={17} />
-              </a>
-            ))}
-          </div>
         </div>
 
         {COLUMNS.map((col) => (
@@ -129,7 +111,9 @@ export const Footer = () => (
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-copper/15 py-8 font-mono text-[11px] tracking-[0.15em] uppercase text-ink/40">
         <span>© {new Date().getFullYear()} clouDroplets.IO Pvt. Ltd. — All rights reserved</span>
         <div className="flex items-center gap-6">
-          <span className="hidden sm:inline">Cloud · Security · Governance</span>
+          <Link to="/terms" data-testid="footer-terms-link" className="link-underline text-ink/60 hover:text-ink transition-colors duration-300">
+            Terms &amp; Conditions
+          </Link>
           <a href="#top" data-testid="footer-back-to-top" className="group flex items-center gap-2 text-ink/60 hover:text-ink transition-colors duration-300">
             Back to top
             <span className="flex h-8 w-8 items-center justify-center rounded-full border border-copper/25 group-hover:-translate-y-1 transition-transform duration-300">

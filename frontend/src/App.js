@@ -1,5 +1,6 @@
 import "@/App.css";
 import { Toaster } from "sonner";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import useLenis from "@/hooks/useLenis";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
@@ -13,6 +14,25 @@ import { Offices } from "@/components/site/Offices";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { Terms } from "@/components/site/Terms";
+
+const Home = () => (
+  <>
+    <Header />
+    <main>
+      <Hero />
+      <Marquee />
+      <Manifesto />
+      <Services />
+      <SolutionTracks />
+      <Stats />
+      <TechPartners />
+      <Offices />
+      <Contact />
+    </main>
+    <Footer />
+  </>
+);
 
 function App() {
   useLenis();
@@ -30,19 +50,12 @@ function App() {
           },
         }}
       />
-      <Header />
-      <main>
-        <Hero />
-        <Marquee />
-        <Manifesto />
-        <Services />
-        <SolutionTracks />
-        <Stats />
-        <TechPartners />
-        <Offices />
-        <Contact />
-      </main>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/terms" element={<Terms />} />
+        </Routes>
+      </BrowserRouter>
       <WhatsAppButton />
     </div>
   );
