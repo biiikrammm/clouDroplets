@@ -10,22 +10,26 @@ const STATS = [
 
 const Counter = ({ value, suffix }) => {
   const ref = useRef(null);
+  const rafRef = useRef(0);
   const inView = useInView(ref, { once: true, margin: "-15%" });
   const [n, setN] = useState(0);
 
   useEffect(() => {
     if (!inView) return;
-    let raf;
+    cancelAnimationFrame(rafRef.current);
     const start = performance.now();
     const dur = 1600;
     const tick = (t) => {
       const p = Math.min((t - start) / dur, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       setN(Math.round(eased * value));
-      if (p < 1) raf = requestAnimationFrame(tick);
+      if (p < 1) rafRef.current = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      setN(value);
+    };
   }, [inView, value]);
 
   return (

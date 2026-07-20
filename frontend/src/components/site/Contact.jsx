@@ -44,6 +44,10 @@ export const Contact = () => {
       toast.error("Please share your name and email.");
       return;
     }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
     toast.success("Thank you — we'll be in touch shortly.");
     setForm({ name: "", email: "", company: "", message: "" });
   };
