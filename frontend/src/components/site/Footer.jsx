@@ -11,23 +11,32 @@ const SOCIALS = [
 
 const COLUMNS = [
   {
-    title: "Navigate",
+    title: "Company",
     links: [
-      { label: "Manifesto", href: "#manifesto" },
-      { label: "Services", href: "#services" },
-      { label: "Solutions", href: "#solutions" },
-      { label: "Partners", href: "#partners" },
-      { label: "Offices", href: "#offices" },
-      { label: "Terms & Conditions", to: "/terms" },
+      { label: "Company Overview", href: "#manifesto" },
+      { label: "Why clouDroplets", href: "#why" },
+      { label: "Delivery Methodology", href: "#methodology" },
+      { label: "Contact", href: "#contact" },
     ],
   },
   {
-    title: "Services",
+    title: "Solutions & Services",
     links: [
       { label: "Cloud Computing", href: "#services" },
       { label: "Cyber Security", href: "#services" },
       { label: "InfoSec Governance", href: "#services" },
+      { label: "Solution Tracks", href: "#solutions" },
       { label: "Managed NOC & SOC", href: "#solutions" },
+    ],
+  },
+  {
+    title: "Explore",
+    links: [
+      { label: "Technologies", href: "#partners" },
+      { label: "Industries", href: "#industries" },
+      { label: "Insights", href: "#insights" },
+      { label: "FAQ", href: "#faq" },
+      { label: "Terms & Conditions", to: "/terms" },
     ],
   },
 ];
@@ -70,7 +79,7 @@ export const Footer = () => (
 
       {/* Middle: identity + columns */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-x-8 gap-y-12 pb-20 border-t border-copper/15 pt-16">
-        <div className="col-span-2 lg:col-span-4">
+        <div className="col-span-2 lg:col-span-3">
           <img src="/assets/logo.png" alt="clouDroplets" className="h-11 w-auto mb-6" />
           <p className="max-w-xs text-ink/55 leading-relaxed text-[15px]">
             Modern Cloud &amp; Security solutions. We protect data integrity, optimize cloud
@@ -117,7 +126,7 @@ export const Footer = () => (
           </div>
         ))}
 
-        <div className="col-span-2 lg:col-span-4">
+        <div className="col-span-2 lg:col-span-3">
           <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-copper mb-6">Offices</p>
           <div className="space-y-6">
             {OFFICES.map((o) => (
