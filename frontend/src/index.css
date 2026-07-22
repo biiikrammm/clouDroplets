@@ -110,6 +110,11 @@ html.lenis, html.lenis body { height: auto; }
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
+/* Hide floating WhatsApp button while mobile menu is open */
+body.menu-open [data-testid="whatsapp-float-button"] {
+    display: none;
+}
+
 @layer base {
     [data-debug-wrapper="true"] { display: contents !important; }
 }

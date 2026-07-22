@@ -111,6 +111,12 @@ export const Header = () => {
     };
   }, []);
 
+  // Hide the floating WhatsApp button while the mobile menu is open
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", open);
+    return () => document.body.classList.remove("menu-open");
+  }, [open]);
+
   const openMenu = (id) => {
     clearTimeout(closeTimer.current);
     setActive(id);
