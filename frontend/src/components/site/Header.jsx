@@ -30,7 +30,7 @@ export const Header = () => {
         transition={{ duration: 1, ease: EASE, delay: 0.2 }}
         className={`fixed top-0 inset-x-0 z-[100] transition-[background-color,backdrop-filter,border-color] duration-500 ${
           scrolled
-            ? "bg-cream/70 backdrop-blur-xl border-b border-copper/15"
+            ? "bg-ink/90 backdrop-blur-xl border-b border-white/10"
             : "bg-transparent border-b border-transparent"
         }`}
       >
@@ -45,7 +45,9 @@ export const Header = () => {
                 key={n.href}
                 href={n.href}
                 data-testid={`nav-${n.label.toLowerCase()}`}
-                className="link-underline font-mono text-[11px] tracking-[0.22em] uppercase text-ink/70 hover:text-ink transition-colors duration-300"
+                className={`link-underline font-mono text-[11px] tracking-[0.22em] uppercase transition-colors duration-300 ${
+                  scrolled ? "text-cream/75 hover:text-cream" : "text-ink/70 hover:text-ink"
+                }`}
               >
                 {n.label}
               </a>
@@ -57,7 +59,9 @@ export const Header = () => {
               <a
                 href="#contact"
                 data-testid="header-cta"
-                className="inline-flex items-center rounded-full bg-ink text-cream px-6 py-2.5 font-mono text-[11px] tracking-[0.18em] uppercase hover:bg-teal transition-colors duration-400"
+                className={`inline-flex items-center rounded-full px-6 py-2.5 font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-400 ${
+                  scrolled ? "bg-teal text-ink hover:bg-cream" : "bg-ink text-cream hover:bg-teal"
+                }`}
               >
                 Get in Touch
               </a>
@@ -67,7 +71,7 @@ export const Header = () => {
           <button
             data-testid="mobile-menu-toggle"
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden text-ink"
+            className={`md:hidden transition-colors duration-300 ${scrolled ? "text-cream" : "text-ink"}`}
             aria-label="Menu"
           >
             {open ? <X size={24} /> : <Menu size={24} />}

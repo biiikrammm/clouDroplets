@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 import { MaskLineScroll, EASE } from "./motion";
@@ -69,6 +69,23 @@ const SERVICES = [
 
 export const Services = () => {
   const [active, setActive] = useState(0);
+  const itemRefs = useRef([]);
+
+  const handleToggle = (i) => {
+    setActive(i);
+    // Wait for the expand/collapse animation to settle, then recenter
+    // the opened item just below the fixed header.
+    setTimeout(() => {
+      const el = itemRefs.current[i];
+      if (!el) return;
+      if (window.__lenis) {
+        window.__lenis.scrollTo(el, { offset: -100, duration: 0.8 });
+      } else {
+        const y = el.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 520);
+  };
 
   return (
     <section id="services" data-testid="services-section" className="bg-sand py-14 md:py-20 border-y border-copper/15">
@@ -95,10 +112,10 @@ export const Services = () => {
             {SERVICES.map((s, i) => {
               const open = active === i;
               return (
-                <div key={s.no} className="border-t border-copper/20 last:border-b">
+                <div key={s.no} ref={(el) => (itemRefs.current[i] = el)} className="border-t border-copper/20 last:border-b scroll-mt-24">
                   <button
                     data-testid={`service-toggle-${i}`}
-                    onClick={() => setActive(i)}
+                    onClick={() => handleToggle(i)}
                     className="w-full flex items-center justify-between py-7 text-left group"
                   >
                     <div className="flex items-baseline gap-5">

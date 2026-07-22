@@ -8,6 +8,7 @@ export default function useLenis() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+    window.__lenis = lenis;
     let raf;
     const loop = (time) => {
       lenis.raf(time);
@@ -31,6 +32,7 @@ export default function useLenis() {
       cancelAnimationFrame(raf);
       document.removeEventListener("click", onClick);
       lenis.destroy();
+      delete window.__lenis;
     };
   }, []);
 }
