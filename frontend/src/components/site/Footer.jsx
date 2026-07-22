@@ -40,9 +40,9 @@ const OFFICES = [
 
 export const Footer = () => (
   <footer data-testid="site-footer" className="relative bg-cream overflow-hidden border-t border-copper/20">
-    <div className="mx-auto max-w-[1500px] px-5 sm:px-8 pt-24 md:pt-32">
+    <div className="mx-auto max-w-[1500px] px-5 sm:px-8 pt-16 md:pt-24">
       {/* Top: statement + CTA */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-20 md:pb-28 items-end">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 md:pb-16 items-end">
         <div className="lg:col-span-8">
           <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-copper mb-8">
             — Start the conversation

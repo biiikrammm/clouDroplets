@@ -39,9 +39,9 @@ const STAGES = [
 ];
 
 export const Methodology = () => (
-  <section id="methodology" data-testid="methodology-section" className="bg-ink py-24 md:py-36">
+  <section id="methodology" data-testid="methodology-section" className="bg-ink py-14 md:py-20">
     <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
-      <div className="mb-16 md:mb-24 max-w-3xl">
+      <div className="mb-8 md:mb-12 max-w-3xl">
         <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-teal mb-6">— How we deliver</p>
         <h2 className="font-serif font-light tracking-tight leading-[0.95] text-5xl sm:text-6xl lg:text-7xl text-cream">
           <MaskLineScroll>Our enterprise</MaskLineScroll>

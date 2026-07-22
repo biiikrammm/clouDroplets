@@ -53,7 +53,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" data-testid="contact-section" className="bg-ink py-24 md:py-36">
+    <section id="contact" data-testid="contact-section" className="bg-ink py-14 md:py-20">
       <div className="mx-auto max-w-[1500px] px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-14">
         <div className="lg:col-span-5">
           <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-teal mb-6">— Connect Us</p>

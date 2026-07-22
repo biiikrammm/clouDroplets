@@ -22,9 +22,9 @@ const CHAPTERS = [
 ];
 
 export const Manifesto = () => (
-  <section id="manifesto" data-testid="manifesto-section" className="py-24 md:py-36">
+  <section id="manifesto" data-testid="manifesto-section" className="py-14 md:py-20">
     <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
-      <div className="mb-20 md:mb-28 max-w-3xl">
+      <div className="mb-10 md:mb-14 max-w-3xl">
         <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-copper mb-6">
           — The Manifesto
         </p>
@@ -38,7 +38,7 @@ export const Manifesto = () => (
         {CHAPTERS.map((c, i) => (
           <div
             key={c.no}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 border-t border-copper/20 py-14 md:py-20 items-start"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 border-t border-copper/20 py-10 md:py-14 items-start"
           >
             <div className="lg:col-span-2">
               <span className="font-mono text-teal text-lg tracking-widest">({c.no})</span>

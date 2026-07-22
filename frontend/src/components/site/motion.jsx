@@ -18,18 +18,23 @@ export const MaskLine = ({ children, delay = 0, className = "" }) => (
 );
 
 // Scroll-triggered mask reveal (for headings below the fold)
+// The viewport observer is on the STABLE (untransformed) wrapper so the
+// trigger fires reliably; the inner span animates via variants.
 export const MaskLineScroll = ({ children, delay = 0, className = "" }) => (
-  <span className="line-mask">
+  <motion.span
+    className="line-mask"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.2 }}
+  >
     <motion.span
       className={`block ${className}`}
-      initial={{ y: "110%" }}
-      whileInView={{ y: "0%" }}
-      viewport={{ once: true, margin: "-10%" }}
+      variants={{ hidden: { y: "110%" }, visible: { y: "0%" } }}
       transition={{ duration: 1, ease: EASE, delay }}
     >
       {children}
     </motion.span>
-  </span>
+  </motion.span>
 );
 
 // Generic fade-up reveal

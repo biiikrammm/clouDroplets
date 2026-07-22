@@ -48,7 +48,7 @@ export const Stats = () => {
   const inView = useInView(sectionRef, { once: true, margin: "-10%" });
 
   return (
-    <section ref={sectionRef} data-testid="stats-section" className="bg-ink py-24 md:py-32">
+    <section ref={sectionRef} data-testid="stats-section" className="bg-ink py-14 md:py-20">
       <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
         <div className="mb-16 max-w-2xl">
           <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-teal mb-6">

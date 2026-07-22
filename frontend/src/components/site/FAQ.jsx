@@ -50,7 +50,7 @@ const FAQS = [
 ];
 
 export const FAQ = () => (
-  <section id="faq" data-testid="faq-section" className="bg-sand py-24 md:py-36 border-y border-copper/15">
+  <section id="faq" data-testid="faq-section" className="bg-sand py-14 md:py-20 border-y border-copper/15">
     <div className="mx-auto max-w-[1500px] px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
       <div className="lg:col-span-4">
         <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-copper mb-6">— FAQ</p>

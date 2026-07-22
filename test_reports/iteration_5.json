@@ -1,0 +1,31 @@
+{
+  "summary": "Frontend-only regression on MaskLineScroll reveal fix + reduced spacing. All 11 section headings render visibly with full height (~120-144px) and inner spans have no residual translateY after scrolling into view. No large empty gaps between eyebrow labels and headings. Nav jump, service/FAQ accordions, contact validation toast, and mobile menu all working. No console errors.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "verified_flows": [
+    "All 11 headings visible after gradual scroll (Manifesto, Why, Services, Methodology, Solutions, Industries, Tech/Partners, Insights, FAQ, Offices, Contact) — spans_translated=0 for every heading",
+    "Header nav-services smooth-scrolled to y≈3952 and heading is visible on landing",
+    "Services accordion (service-toggle-0) expands (panel height 591px, Cloud Computing content shown)",
+    "FAQ accordion (faq-item-0) clickable without errors",
+    "Contact form empty submit shows toast: 'Please share your name and email.'",
+    "Mobile menu (390x844) opens revealing Manifesto/Services/Solutions/Partners/Offices links + GET IN TOUCH",
+    "No console errors during full top-to-bottom scroll"
+  ],
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "stats testids: only 'stats-section' wrapper testid exists; individual counters lack per-stat data-testid (e.g., stat-clients, stat-projects). Recommend adding for future assertions.",
+    "Counter values (250+, 120+, 16, 40+) appear rendered as split character/span structure making text-based scraping brittle — add data-testid on each stat number span."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "MaskLineScroll parent-observer fix is confirmed working. All section headings reliably reveal on scroll. If future issues arise, check that motion.span.line-mask wrapper (untransformed) is the whileInView target, not the animated inner span. Individual stat counters lack data-testid for direct assertion; verify via visible text screenshots.",
+  "rca of the issue": "Previous bug: whileInView observer sat on the y:110% translated span, causing intersection to fail intermittently → headings stayed invisible → looked like large empty spacing. Fix moved observer to stable parent .line-mask wrapper with variants driving the inner span. Verified: 100% of headings show height ~120-144px with no translated inner spans."
+}

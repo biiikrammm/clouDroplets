@@ -18,9 +18,9 @@ const OFFICES = [
 ];
 
 export const Offices = () => (
-  <section id="offices" data-testid="offices-section" className="py-24 md:py-36">
+  <section id="offices" data-testid="offices-section" className="py-14 md:py-20">
     <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
-      <div className="mb-16 md:mb-24">
+      <div className="mb-8 md:mb-12">
         <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-copper mb-6">— Where we are</p>
         <h2 className="font-serif font-light tracking-tight leading-[0.95] text-5xl sm:text-6xl lg:text-7xl text-ink">
           <MaskLineScroll>Two cities,</MaskLineScroll>

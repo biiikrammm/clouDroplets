@@ -33,7 +33,7 @@ const CATEGORIES = [
 export const TechPartners = () => {
   const loop = [...LOGOS, ...LOGOS];
   return (
-    <section id="partners" data-testid="partners-section" className="bg-sand py-24 md:py-32 border-y border-copper/15 overflow-hidden">
+    <section id="partners" data-testid="partners-section" className="bg-sand py-14 md:py-20 border-y border-copper/15 overflow-hidden">
       <div className="mx-auto max-w-[1500px] px-5 sm:px-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <h2 className="font-serif font-light tracking-tight leading-[0.95] text-5xl sm:text-6xl text-ink">
           <MaskLineScroll>Technology</MaskLineScroll>
@@ -45,7 +45,7 @@ export const TechPartners = () => {
         </p>
       </div>
 
-      <div className="marquee-mask mb-16 md:mb-20">
+      <div className="marquee-mask mb-8 md:mb-12">
         <div className="flex w-max animate-marquee-fast items-center">
           {loop.map((l, i) => (
             <div

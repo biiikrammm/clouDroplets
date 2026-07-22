@@ -71,9 +71,9 @@ export const Services = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="services" data-testid="services-section" className="bg-sand py-24 md:py-36 border-y border-copper/15">
+    <section id="services" data-testid="services-section" className="bg-sand py-14 md:py-20 border-y border-copper/15">
       <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-16 md:mb-24 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 md:mb-12 items-end">
           <div className="lg:col-span-8">
             <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-copper mb-6">
               — Exclusive Services

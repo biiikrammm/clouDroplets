@@ -10,9 +10,9 @@ const TRACKS = [
 ];
 
 export const SolutionTracks = () => (
-  <section id="solutions" data-testid="solutions-section" className="py-24 md:py-36">
+  <section id="solutions" data-testid="solutions-section" className="py-14 md:py-20">
     <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
-      <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
+      <div className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <h2 className="font-serif font-light tracking-tight leading-[0.95] text-5xl sm:text-6xl lg:text-7xl text-ink">
           <MaskLineScroll>Solution</MaskLineScroll>
           <MaskLineScroll delay={0.1} className="italic text-copper">tracks.</MaskLineScroll>
