@@ -6,7 +6,7 @@ const SOCIALS = [
   { icon: Twitter, href: "https://x.com/DropletClo80541", label: "Twitter" },
   { icon: Instagram, href: "https://www.instagram.com/ropletscloud/", label: "Instagram" },
   { icon: Facebook, href: "https://www.facebook.com/people/Cloud-Roplets/pfbid02nNtrfgFDXt4hcKo61APqALNgzDi6C11msMLtmiFfAXGArsdpKighotx5CEBMTCFYl/", label: "Facebook" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/cloudroplets-io-pvt-ltd/", label: "LinkedIn" },
 ];
 
 const COLUMNS = [
