@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { MaskLineScroll, Magnetic } from "./motion";
 
 const SOCIALS = [
+  { icon: Twitter, href: "https://x.com/DropletClo80541", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/ropletscloud/", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/people/Cloud-Roplets/pfbid02nNtrfgFDXt4hcKo61APqALNgzDi6C11msMLtmiFfAXGArsdpKighotx5CEBMTCFYl/", label: "Facebook" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
 ];
 
 const COLUMNS = [
@@ -81,6 +81,7 @@ export const Footer = () => (
               <a
                 key={s.label}
                 href={s.href}
+                {...(s.href !== "#" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 aria-label={s.label}
                 data-testid={`footer-social-${s.label.toLowerCase()}`}
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-copper/25 text-ink/60 hover:bg-ink hover:text-cream hover:border-ink transition-colors duration-300"
