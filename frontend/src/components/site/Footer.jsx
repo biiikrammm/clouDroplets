@@ -59,7 +59,7 @@ export const Footer = () => (
               data-testid="footer-cta"
               className="group inline-flex items-center gap-4 rounded-full bg-ink text-cream pl-8 pr-3 py-3 font-mono text-[11px] tracking-[0.2em] uppercase hover:bg-teal transition-colors duration-400"
             >
-              Free Consultation
+              Get in Touch
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-cream text-ink transition-transform duration-400 group-hover:rotate-45">
                 <ArrowUpRight size={18} />
               </span>

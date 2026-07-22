@@ -59,7 +59,7 @@ export const Header = () => {
                 data-testid="header-cta"
                 className="inline-flex items-center rounded-full bg-ink text-cream px-6 py-2.5 font-mono text-[11px] tracking-[0.18em] uppercase hover:bg-teal transition-colors duration-400"
               >
-                Free Consultation
+                Get in Touch
               </a>
             </Magnetic>
           </div>
@@ -102,7 +102,7 @@ export const Header = () => {
               onClick={() => setOpen(false)}
               className="mt-4 font-mono text-xs tracking-[0.2em] uppercase text-copper"
             >
-              Free Consultation →
+              Get in Touch →
             </a>
           </motion.div>
         )}
