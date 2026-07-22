@@ -63,10 +63,10 @@ export const WhyChoose = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l border-t border-copper/20">
         {REASONS.map((r, i) => (
           <Reveal key={r.title} delay={(i % 4) * 0.06}>
-            <div className="group h-full border-r border-b border-copper/20 p-8 md:p-9 transition-colors duration-500 hover:bg-cream">
-              <r.icon className="text-teal mb-6" size={26} strokeWidth={1.4} />
-              <h3 className="font-serif text-2xl text-ink mb-3 leading-tight">{r.title}</h3>
-              <p className="text-[14px] text-ink/55 leading-relaxed">{r.body}</p>
+            <div className="group h-full border-r border-b border-copper/20 p-6 sm:p-7 lg:p-9 transition-colors duration-500 hover:bg-cream">
+              <r.icon className="text-teal mb-5 sm:mb-6" size={26} strokeWidth={1.4} />
+              <h3 className="font-serif text-xl sm:text-2xl text-ink mb-3 leading-tight">{r.title}</h3>
+              <p className="text-[13px] sm:text-[14px] text-ink/55 leading-relaxed">{r.body}</p>
             </div>
           </Reveal>
         ))}
