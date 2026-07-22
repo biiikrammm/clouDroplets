@@ -63,10 +63,21 @@ export const WhyChoose = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l border-t border-copper/20">
         {REASONS.map((r, i) => (
           <Reveal key={r.title} delay={(i % 4) * 0.06}>
-            <div className="group h-full border-r border-b border-copper/20 p-6 sm:p-7 lg:p-9 transition-colors duration-500 hover:bg-cream">
-              <r.icon className="text-teal mb-5 sm:mb-6" size={26} strokeWidth={1.4} />
-              <h3 className="font-serif text-xl sm:text-2xl text-ink mb-3 leading-tight">{r.title}</h3>
-              <p className="text-[13px] sm:text-[14px] text-ink/55 leading-relaxed">{r.body}</p>
+            <div className="group relative border-r border-b border-copper/20 p-8 md:p-10 h-full min-h-[300px] flex flex-col justify-between overflow-hidden transition-colors duration-500 hover:bg-ink">
+              <div className="flex items-center justify-between">
+                <r.icon className="text-teal transition-colors duration-500" size={24} strokeWidth={1.4} />
+                <span className="font-mono text-xs text-ink/30 group-hover:text-cream/40 transition-colors duration-500">
+                  /0{i + 1}
+                </span>
+              </div>
+              <div>
+                <h3 className="font-serif text-2xl md:text-3xl text-ink group-hover:text-cream transition-colors duration-500 mb-3 leading-tight">
+                  {r.title}
+                </h3>
+                <p className="text-sm text-ink/55 group-hover:text-cream/60 transition-colors duration-500 leading-relaxed">
+                  {r.body}
+                </p>
+              </div>
             </div>
           </Reveal>
         ))}
