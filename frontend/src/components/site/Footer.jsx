@@ -1,6 +1,13 @@
-import { ArrowUpRight, ArrowUp } from "lucide-react";
+import { ArrowUpRight, ArrowUp, Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MaskLineScroll, Magnetic } from "./motion";
+
+const SOCIALS = [
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Facebook, href: "#", label: "Facebook" },
+];
 
 const COLUMNS = [
   {
@@ -69,6 +76,19 @@ export const Footer = () => (
             Modern Cloud &amp; Security solutions. We protect data integrity, optimize cloud
             infrastructure, and drive compliance &amp; migration.
           </p>
+          <div className="mt-8 flex items-center gap-3">
+            {SOCIALS.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={s.label}
+                data-testid={`footer-social-${s.label.toLowerCase()}`}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-copper/25 text-ink/60 hover:bg-ink hover:text-cream hover:border-ink transition-colors duration-300"
+              >
+                <s.icon size={17} />
+              </a>
+            ))}
+          </div>
         </div>
 
         {COLUMNS.map((col) => (
