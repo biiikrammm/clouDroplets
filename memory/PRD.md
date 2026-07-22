@@ -34,3 +34,10 @@ Redesign clouDroplets.IO Pvt. Ltd. (Cloud & Cyber Security consultancy, India) i
 - P1: Wire contact form to backend (store submissions + email via Resend) if desired.
 - P1: Add case studies / testimonials section.
 - P2: SEO meta tags, OG image, sitemap.
+
+## Enterprise Content Expansion (Dec 2025)
+Restructured into enterprise-grade IT solutions site using REAL content from public_html.zip (no fabricated facts). Design/animations preserved.
+- Reused (old site): Vision, Mission, Principle; Cloud Computing / Cyber Security / InfoSec Governance service copy; Cloud Security Architect/Tools/Operations paragraphs; compliance frameworks (GDPR/HIPAA/PCI DSS/SOC2/ISO27001); Quality Assurance / Value Proposition (Technology, Alliances, Solutions, People, Services) → Why Choose; Technology Alliance vendor list; 3 real blog titles → Insights.
+- Expanded sections: Hero copy + CTA ("Talk to a Cloud Expert"); Services accordion (overview/challenge/capabilities/technologies/outcome); TechPartners (4 alliance-category cards); Stats supporting paragraph.
+- New sections (design-consistent): WhyChoose (8 cards), Methodology (7 stages), Industries (6 sectors), Insights (3 cards), FAQ (10 Q, shadcn Accordion).
+- PLACEHOLDERS needing client data: Stats numbers (250+/120+/16/40+ — old site had 0s, unverified); Industries (illustrative applicability — confirm actual served sectors); Insights article bodies (only excerpts); migration timeline "to be confirmed"; case studies/testimonials/client logos/certifications-owned = NOT added (avoid fabrication).

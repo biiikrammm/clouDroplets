@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, animate } from "framer-motion";
 
 const STATS = [
   { value: 250, suffix: "+", label: "Projects Complete" },
@@ -10,26 +10,17 @@ const STATS = [
 
 const Counter = ({ value, suffix }) => {
   const ref = useRef(null);
-  const rafRef = useRef(0);
   const inView = useInView(ref, { once: true, margin: "-15%" });
   const [n, setN] = useState(0);
 
   useEffect(() => {
     if (!inView) return;
-    cancelAnimationFrame(rafRef.current);
-    const start = performance.now();
-    const dur = 1600;
-    const tick = (t) => {
-      const p = Math.min((t - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setN(Math.round(eased * value));
-      if (p < 1) rafRef.current = requestAnimationFrame(tick);
-    };
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      cancelAnimationFrame(rafRef.current);
-      setN(value);
-    };
+    const controls = animate(0, value, {
+      duration: 1.6,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (v) => setN(Math.round(v)),
+    });
+    return () => controls.stop();
   }, [inView, value]);
 
   return (
