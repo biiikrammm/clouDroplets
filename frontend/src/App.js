@@ -6,10 +6,15 @@ import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Marquee } from "@/components/site/Marquee";
 import { Manifesto } from "@/components/site/Manifesto";
+import { WhyChoose } from "@/components/site/WhyChoose";
 import { Services } from "@/components/site/Services";
+import { Methodology } from "@/components/site/Methodology";
 import { SolutionTracks } from "@/components/site/SolutionTracks";
+import { Industries } from "@/components/site/Industries";
 import { Stats } from "@/components/site/Stats";
 import { TechPartners } from "@/components/site/TechPartners";
+import { Insights } from "@/components/site/Insights";
+import { FAQ } from "@/components/site/FAQ";
 import { Offices } from "@/components/site/Offices";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -23,10 +28,15 @@ const Home = () => (
       <Hero />
       <Marquee />
       <Manifesto />
+      <WhyChoose />
       <Services />
+      <Methodology />
       <SolutionTracks />
+      <Industries />
       <Stats />
       <TechPartners />
+      <Insights />
+      <FAQ />
       <Offices />
       <Contact />
     </main>

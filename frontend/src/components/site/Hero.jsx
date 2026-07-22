@@ -55,10 +55,13 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.9, ease: EASE }}
-            className="mt-9 max-w-md text-base sm:text-lg text-ink/60 leading-relaxed"
+            className="mt-9 max-w-lg text-base sm:text-lg text-ink/60 leading-relaxed"
           >
-            The experts in cloud security — safeguarding data and driving
-            technological advancement with security crafted at the core.
+            clouDroplets is a Cloud &amp; Cyber Security consultancy that helps enterprises
+            migrate, secure and optimise their infrastructure across AWS, Azure, Google Cloud
+            and Oracle Cloud. From advisory and architecture to 24/7 managed operations, we
+            safeguard your data and accelerate technological advancement — with security
+            engineered at the core.
           </motion.p>
 
           <motion.div
@@ -69,19 +72,19 @@ export const Hero = () => {
           >
             <Magnetic>
               <a
-                href="#services"
+                href="#contact"
                 data-testid="hero-cta-explore"
                 className="inline-flex items-center gap-3 rounded-full bg-ink text-cream px-8 py-4 font-mono text-[11px] tracking-[0.2em] uppercase hover:bg-teal transition-colors duration-400"
               >
-                Explore Services
+                Talk to a Cloud Expert
               </a>
             </Magnetic>
             <a
-              href="#contact"
+              href="#services"
               data-testid="hero-cta-contact"
               className="link-underline font-mono text-[11px] tracking-[0.2em] uppercase text-ink/70"
             >
-              Talk to us
+              Explore Services
             </a>
           </motion.div>
         </motion.div>

@@ -8,6 +8,10 @@ const SERVICES = [
     no: "01",
     title: "Cloud Computing",
     img: "/assets/ser1.jpg",
+    overview:
+      "We help enterprises adopt cloud computing the right way — on-demand access to compute, storage and platform resources across SaaS, PaaS and IaaS models. From advisory through to fully managed operations, our engineers design landing zones and workloads on AWS, Microsoft Azure, Google Cloud Platform and Oracle Cloud Infrastructure so you scale without over-investing in on-premises infrastructure.",
+    challenge:
+      "Fragmented environments, unpredictable spend and migrations that stall are the challenges most organisations face when moving to cloud.",
     items: [
       "Cloud Advisory & Strategy",
       "Cloud Migration",
@@ -17,24 +21,38 @@ const SERVICES = [
       "Cloud Cost Optimization",
       "HA & Disaster Recovery",
     ],
+    tech: ["AWS", "Microsoft Azure", "Google Cloud", "Oracle Cloud (OCI)", "VMware"],
+    outcome:
+      "Lower IT expenditure, stronger performance, and infrastructure that grows in step with the business.",
   },
   {
     no: "02",
     title: "Cyber Security",
     img: "/assets/sernew3.jpg",
+    overview:
+      "Our multi-vendor cloud security practice designs, implements and operates the controls that protect data, applications and infrastructure from cyberattack. Cloud Security Architects establish encryption, intrusion detection and access controls purpose-built for cloud environments, while our operations teams provide continuous monitoring, threat detection and incident response backed by leading platform-native and third-party tooling.",
+    challenge:
+      "Expanding attack surfaces, identity sprawl and always-on threats demand defence that is layered, monitored and continuously improved.",
     items: [
       "App Security (WAF / DDoS)",
       "Content Delivery Network (CDN)",
       "Identity & Access Management — PAM, SSO, MFA",
-      "Encryption — SSL, Data-in-Rest, DLP",
+      "Encryption — SSL, Data-in-Rest, DLP & Classifier",
       "SIEM / XDR — Security Incident & Event Management",
-      "Threat Analytics & Monitoring",
+      "Threat Analytics & 24/7 Monitoring",
     ],
+    tech: ["Palo Alto Networks", "Check Point", "Fortinet", "CrowdStrike", "Splunk", "CyberArk", "Akamai"],
+    outcome:
+      "Confidentiality, integrity and availability of cloud-hosted resources — with proactive defence and up-to-date threat intelligence.",
   },
   {
     no: "03",
     title: "InfoSec Governance",
     img: "/assets/sernew7.jpg",
+    overview:
+      "Governance, risk and control services align your security posture with recognised regulatory standards. We run posture assessments and vulnerability testing (VA/PT), close gaps across network, application, database, administrative and physical controls, and prepare organisations for frameworks such as GDPR, HIPAA and PCI DSS. Regular audits and continuous monitoring reduce the risk of breaches and the legal exposure that follows.",
+    challenge:
+      "Meeting evolving compliance obligations while proving control effectiveness to auditors, customers and regulators.",
     items: [
       "Security Posture Assessment",
       "Application / Web Security",
@@ -43,6 +61,9 @@ const SERVICES = [
       "Vulnerability Assessment — VA / PT",
       "Risk, Controls & Compliance Audit",
     ],
+    tech: ["GDPR", "HIPAA", "PCI DSS", "SOC 2", "ISO 27001"],
+    outcome:
+      "Demonstrable compliance, reduced risk exposure, and increased trust from clients and stakeholders.",
   },
 ];
 
@@ -63,8 +84,8 @@ export const Services = () => {
             </h2>
           </div>
           <div className="lg:col-span-4 text-ink/55 text-base leading-relaxed">
-            Complete, multi-vendor cloud security — customized to your requirements,
-            built on innovation and expertise.
+            Complete, multi-vendor Cloud &amp; Security solutions — customized to your
+            requirements and built on deep engineering expertise.
           </div>
         </div>
 
@@ -103,14 +124,39 @@ export const Services = () => {
                         transition={{ duration: 0.5, ease: EASE }}
                         className="overflow-hidden"
                       >
-                        <ul className="pb-8 pl-12 grid sm:grid-cols-2 gap-x-8 gap-y-3">
-                          {s.items.map((it) => (
-                            <li key={it} className="flex items-start gap-3 text-ink/65">
-                              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
-                              <span className="text-[15px] leading-snug">{it}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="pb-8 pl-12">
+                          <p className="text-ink/70 text-[15px] leading-relaxed max-w-xl mb-5">
+                            {s.overview}
+                          </p>
+                          <p className="text-ink/55 text-[14px] leading-relaxed max-w-xl mb-7 border-l border-copper/40 pl-4">
+                            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-copper block mb-1">The challenge</span>
+                            {s.challenge}
+                          </p>
+
+                          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-teal mb-3">Capabilities</p>
+                          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-7">
+                            {s.items.map((it) => (
+                              <li key={it} className="flex items-start gap-3 text-ink/65">
+                                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                                <span className="text-[15px] leading-snug">{it}</span>
+                              </li>
+                            ))}
+                          </ul>
+
+                          <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-teal mb-3">Technologies</p>
+                          <div className="flex flex-wrap gap-2 mb-7">
+                            {s.tech.map((t) => (
+                              <span key={t} className="rounded-full border border-copper/25 px-3 py-1 font-mono text-[11px] tracking-wide text-ink/60">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+
+                          <p className="text-ink/70 text-[15px] leading-relaxed max-w-xl">
+                            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-copper block mb-1">Business outcome</span>
+                            {s.outcome}
+                          </p>
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>

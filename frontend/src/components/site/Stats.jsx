@@ -43,9 +43,16 @@ const Counter = ({ value, suffix }) => {
 export const Stats = () => (
   <section data-testid="stats-section" className="bg-ink py-24 md:py-32">
     <div className="mx-auto max-w-[1500px] px-5 sm:px-8">
-      <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-teal mb-16">
-        — Solutions for security that empower you
-      </p>
+      <div className="mb-16 max-w-2xl">
+        <p className="font-mono text-[11px] tracking-[0.3em] uppercase text-teal mb-6">
+          — Solutions for security that empower you
+        </p>
+        <p className="font-serif text-2xl sm:text-3xl text-cream/90 leading-snug">
+          Our specialty is complete security solutions, customized to meet your specific
+          requirements — protecting your digital assets and your business through innovation
+          and expertise.
+        </p>
+      </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-14 gap-x-8">
         {STATS.map((s, i) => (
           <motion.div
