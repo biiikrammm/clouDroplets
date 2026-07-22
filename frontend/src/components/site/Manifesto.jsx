@@ -38,14 +38,14 @@ export const Manifesto = () => (
         {CHAPTERS.map((c, i) => (
           <div
             key={c.no}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 border-t border-copper/20 py-10 md:py-14 items-start"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 border-t border-copper/20 py-7 md:py-9 items-start"
           >
             <div className="lg:col-span-2">
               <span className="font-mono text-teal text-lg tracking-widest">({c.no})</span>
             </div>
             <div className="lg:col-span-5">
               <Reveal>
-                <h3 className="font-serif text-4xl sm:text-5xl text-ink mb-6">{c.title}</h3>
+                <h3 className="font-serif text-4xl sm:text-5xl text-ink mb-4">{c.title}</h3>
                 <p className="text-ink/60 text-lg leading-relaxed max-w-md">{c.body}</p>
               </Reveal>
             </div>
